@@ -160,7 +160,7 @@ const Portfolio=()=>{
           <a
             href="https://www.linkedin.com/in/arshiya-fathima31/"
             target="_blank"
-            className="px-6 py-3 bg-blue-500 rounded-2xl font-semibold hover:scale-105 transition shadow-lg"
+            className="mt-8 px-6 py-3 bg-blue-500 rounded-2xl font-semibold hover:scale-105 transition shadow-lg"
           >
             LinkedIn
           </a>
@@ -168,16 +168,16 @@ const Portfolio=()=>{
           <a
             href="https://github.com/"
             target="_blank"
-            className="px-6 py-3 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition shadow-lg"
+            className="mt-8 px-6 py-3 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition shadow-lg"
           >
             GitHub
           </a>
           <a
           href="/arshiya_resume.pdf"
           download
-          className="
+          className="mt-8
             group relative inline-flex items-center gap-3
-            px-8 py-4
+            px-6 py-3
             bg-cyan-500/20
             border border-cyan-400/30
             backdrop-blur-xl
