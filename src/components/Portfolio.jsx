@@ -1,4 +1,6 @@
-import {motion} from 'framer-motion';
+import {useState} from 'react';
+import {motion,AnimatePresence} from 'framer-motion';
+import {Menu,X} from 'lucide-react';
 import {
   FaHtml5,
   FaCss3Alt,
@@ -18,6 +20,7 @@ import {
 } from "react-icons/si";
 
 const Portfolio=()=>{
+  const [open, setOpen] = useState(false);
    const projects = [
      {
      title: "Tecu Ambank Portal & iBack Office",
@@ -95,12 +98,12 @@ const Portfolio=()=>{
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
 
       {/* Navbar */}
-      <motion.nav
+      {/* <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="flex items-center justify-between px-8 py-4 bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl sticky top-0 z-50 rounded-b-3xl"
-      >
+      className="flex items-center justify-between px-8 py-4 bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl sticky top-0 z-50 rounded-b-3xl"
+        >
         <h1 className="text-2xl font-bold text-blue-400">
           Arshiya Fathima
         </h1>
@@ -127,7 +130,78 @@ const Portfolio=()=>{
             </a>
           </li>
         </ul>
-      </motion.nav>
+      </motion.nav> */}
+      <motion.nav
+  initial={{ y: -100, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.5 }}
+        
+  className=" fixed top-0 left-0 w-full z-50 bg-[#111827]/90 backdrop-blur-md bg-white/10 rounded-b-3xl border border-white/10 shadow-xl z-50">
+   {/* className="flex items-center justify-between px-8 py-4 bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl sticky top-0 z-50 rounded-b-3xl" */}
+
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    {/* Logo */}
+    <h1 className="text-2xl md:text-3xl font-bold text-blue-500">
+      Arshiya Fathima
+    </h1>
+
+    {/* Desktop Menu */}
+    <ul className="hidden md:flex gap-8 text-white text-lg">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    {/* Mobile Icon */}
+    <button
+      className="md:hidden text-white"
+      onClick={() => setOpen(!open)}
+    >
+      {open ? <X size={28} /> : <Menu size={28} />}
+    </button>
+  </div>
+
+  {/* Mobile Menu */}
+  <AnimatePresence>
+    {open && (
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: "auto" }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="md:hidden overflow-hidden bg-[#111827]"
+      >
+        <ul className="flex flex-col gap-5 px-6 py-5 text-white text-lg">
+          <li>
+            <a href="#about" onClick={() => setOpen(false)}>
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#experience" onClick={() => setOpen(false)}>
+              Experience
+            </a>
+          </li>
+
+          <li>
+            <a href="#projects" onClick={() => setOpen(false)}>
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" onClick={() => setOpen(false)}>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</motion.nav>
 
       {/* Hero Section */}
       <motion.section
