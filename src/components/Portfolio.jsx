@@ -98,110 +98,75 @@ const Portfolio=()=>{
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
 
       {/* Navbar */}
-      {/* <motion.nav
+      <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      className="flex items-center justify-between px-8 py-4 bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl sticky top-0 z-50 rounded-b-3xl"
-        >
-        <h1 className="text-2xl font-bold text-blue-400">
-          Arshiya Fathima
-        </h1>
+        transition={{ duration: 0.5 }}
+              
+        className="fixed top-0 left-0 w-full z-50 bg-[#111827]/90 backdrop-blur-md bg-white/10 rounded-b-3xl border border-white/10 shadow-xl z-50">
+        <div className="max-w-8xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <ul className="flex gap-6 font-medium text-gray-200">
-          <li>
-            <a href="#about" className="hover:text-blue-400 transition">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="hover:text-blue-400 transition">
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="hover:text-blue-400 transition">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-blue-400 transition">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </motion.nav> */}
-      <motion.nav
-  initial={{ y: -100, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.5 }}
-        
-  className=" fixed top-0 left-0 w-full z-50 bg-[#111827]/90 backdrop-blur-md bg-white/10 rounded-b-3xl border border-white/10 shadow-xl z-50">
-   {/* className="flex items-center justify-between px-8 py-4 bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl sticky top-0 z-50 rounded-b-3xl" */}
+          {/* Logo */}
+          <h1 className="text-2xl md:text-3xl font-bold text-blue-500">
+            Arshiya Fathima
+          </h1>
 
-  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex gap-8 text-white text-lg">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
 
-    {/* Logo */}
-    <h1 className="text-2xl md:text-3xl font-bold text-blue-500">
-      Arshiya Fathima
-    </h1>
+          {/* Mobile Icon */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
 
-    {/* Desktop Menu */}
-    <ul className="hidden md:flex gap-8 text-white text-lg">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden bg-[#111827]"
+            >
+              <ul className="flex flex-col gap-5 px-6 py-5 text-white text-lg">
+                <li>
+                  <a href="#about" onClick={() => setOpen(false)}>
+                    About
+                  </a>
+                </li>
 
-    {/* Mobile Icon */}
-    <button
-      className="md:hidden text-white"
-      onClick={() => setOpen(!open)}
-    >
-      {open ? <X size={28} /> : <Menu size={28} />}
-    </button>
-  </div>
+                <li>
+                  <a href="#experience" onClick={() => setOpen(false)}>
+                    Experience
+                  </a>
+                </li>
 
-  {/* Mobile Menu */}
-  <AnimatePresence>
-    {open && (
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: 1, height: "auto" }}
-        exit={{ opacity: 0, height: 0 }}
-        transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-[#111827]"
-      >
-        <ul className="flex flex-col gap-5 px-6 py-5 text-white text-lg">
-          <li>
-            <a href="#about" onClick={() => setOpen(false)}>
-              About
-            </a>
-          </li>
+                <li>
+                  <a href="#projects" onClick={() => setOpen(false)}>
+                    Projects
+                  </a>
+                </li>
 
-          <li>
-            <a href="#experience" onClick={() => setOpen(false)}>
-              Experience
-            </a>
-          </li>
-
-          <li>
-            <a href="#projects" onClick={() => setOpen(false)}>
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact" onClick={() => setOpen(false)}>
-              Contact
-            </a>
-          </li>
-        </ul>
-      </motion.div>
-    )}
-  </AnimatePresence>
-</motion.nav>
+                <li>
+                  <a href="#contact" onClick={() => setOpen(false)}>
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
 
       {/* Hero Section */}
       <motion.section
