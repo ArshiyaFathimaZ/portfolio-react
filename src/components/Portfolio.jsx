@@ -36,7 +36,7 @@ const Portfolio=()=>{
           setFade(true);
         }, 500)
 
-       }, 30000)
+       }, 5000)
     return () => clearInterval(interval);
   }, [])
 
