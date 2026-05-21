@@ -1,6 +1,8 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {motion,AnimatePresence} from 'framer-motion';
 import {Menu,X} from 'lucide-react';
+import {IMGS,GIT_HUB,LINKED_IN,EMAIL,PHONE,RESUME_LINK} from '../utils/constants';
+import {projects} from '../utils/data';
 import {
   FaHtml5,
   FaCss3Alt,
@@ -21,63 +23,24 @@ import {
 
 const Portfolio=()=>{
   const [open, setOpen] = useState(false);
-   const projects = [
-     {
-     title: "Tecu Ambank Portal & iBack Office",
-    desc: "Developed a digital banking portal and back-office system for Tecu's digital transformation initiative, delivering responsive UI and enhanced banking services.",
-    functionalities: [
-      "Secure customer login and authentication",
-      "Account and transaction management dashboard",
-      "Document upload and verification system",
-      "Responsive UI for desktop and mobile devices",
-      "Real-time form validation and error handling",
-      "Reusable React components for scalability",
-      "Role-based access for admin and users",
-      "Integrated APIs for banking operations",
-      "Optimized performance and clean UI experience"
-    ],
-    tech: "ReactJS, HTML5, CSS3, Bootstrap, JavaScript, jQuery"
-  },
-    {
-      title: "AFG & DMS Portal",
-      desc: "Developed an enterprise document management platform for banking workflows with document upload, preview, scan, print, and conversion functionalities.",
-      tech: "React.js, HTML5, CSS3, Bootstrap, JavaScript",
-    },
-    {
-      title: "Banking Chatbot Application",
-      desc: "Built a responsive chatbot-based banking solution integrated with Firebase for digital banking automation and customer support.",
-      tech: "React.js, Firebase, Node.js, MongoDB",
-    },
-    {
-      title: "IBorg RPA Automation Tool",
-      desc: "Contributed to an automation testing desktop application using Electron for Robotic Process Automation workflows.",
-      tech: "AngularJS, Node.js, Electron",
-    },
-     {
-      title: "Sirma Global Internal Website",
-      desc: "Developed responsive service pages for the company’s internal website including Database Management Services, Application Development and Maintenance, Managed Services, and Business Process Re-Engineering.",
-      tech: "ReactJs,HTML5, CSS3, Bootstrap 4.5, JavaScript",
-    },
-    {
-      title: "Personal Portfolio Website",
-      desc: "Designed and developed a modern responsive portfolio website to showcase projects, skills, experience, and achievements with smooth animations and glassmorphism UI.",
+  const [fade, setFade] = useState(true);
+  const [currentImg, setCurrentImg] = useState(0);
+  
 
-      functionalities: [
-        "Responsive design for all devices",
-        "Animated UI using Framer Motion",
-        "Resume download functionality",
-        "Interactive project showcase section",
-        "Skills section with technology icons",
-        "Glassmorphism and modern UI design",
-        "Smooth scrolling and hover animations"
-      ],
+  useEffect(()=>{
+    const interval=setInterval(()=>{
+      setFade(false);
+      
+        setTimeout(()=>{
+          setCurrentImg((prev)=>(prev+1)%IMGS.length);
+          setFade(true);
+        }, 500)
 
-      tech: "ReactJS, Tailwind CSS, Framer Motion, JavaScript"
-    }
-  ];
+       }, 30000)
+    return () => clearInterval(interval);
+  }, [])
 
-
-  const skills = [
+    const skills = [
   { name: "HTML5", icon: <FaHtml5 size={40} /> },
   { name: "CSS3", icon: <FaCss3Alt size={40} /> },
   { name: "JavaScript ES6+", icon: <SiJavascript size={40} /> },
@@ -178,10 +141,12 @@ const Portfolio=()=>{
         <motion.img
           whileHover={{ scale: 1.08, rotate: 3 }}
           transition={{ type: "spring", stiffness: 200 }}
-          src="https://i.pravatar.cc/200"
-          alt="profile"
-          className="w-40 h-40 rounded-full border-4 border-blue-400 shadow-2xl mb-6"
+           alt="profile"
+           src={IMGS[currentImg]}
+          className="w-40 h-40 object-cover rounded-full border-4 border-blue-400 shadow-2xl mb-6 transition-opacity duration-500 ease-in-out ${fade?'opacity-100':'opacity-0'}"
         />
+         {/* src="https://i.pravatar.cc/200" */}
+        
 
         <h2 className="text-5xl font-bold mb-4">
           Frontend Developer
@@ -197,7 +162,7 @@ const Portfolio=()=>{
 
         <div className="flex gap-6 mt-10 flex-wrap justify-center">
           <a
-            href="https://www.linkedin.com/in/arshiya-fathima31/"
+            href={LINKED_IN}
             target="_blank"
             className="mt-8 px-6 py-3 bg-blue-500 rounded-2xl font-semibold hover:scale-105 transition shadow-lg"
           >
@@ -205,14 +170,14 @@ const Portfolio=()=>{
           </a>
 
           <a
-            href="https://github.com/"
+            href={GIT_HUB}
             target="_blank"
             className="mt-8 px-6 py-3 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition shadow-lg"
           >
             GitHub
           </a>
           <a
-          href="/arshiya_resume.pdf"
+          href={RESUME_LINK}
           download
           className="mt-8
             group relative inline-flex items-center gap-3
@@ -441,16 +406,16 @@ const Portfolio=()=>{
         <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
 
         <p className="mb-4 text-lg text-gray-300">
-          📧 arshiyaf9990@gmail.com
+          📧 {EMAIL}
         </p>
 
         <p className="mb-8 text-lg text-gray-300">
-          📱 +91 8496875561
+          📱 {PHONE}
         </p>
 
         <div className="flex justify-center gap-6 flex-wrap">
           <a
-            href="https://www.linkedin.com/in/arshiya-fathima31/"
+            href={LINKED_IN}
             target="_blank"
             className="bg-blue-500 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition"
           >
@@ -458,7 +423,7 @@ const Portfolio=()=>{
           </a>
 
           <a
-            href="https://github.com/"
+            href={GIT_HUB}
             target="_blank"
             className="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition"
           >
