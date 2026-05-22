@@ -56,7 +56,7 @@
       ],
 
       tech: "ReactJS, Tailwind CSS, Framer Motion, JavaScript",
-      link:"#"
+      link:"#about"
  }
   ];
 
