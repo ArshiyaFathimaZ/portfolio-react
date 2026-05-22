@@ -358,6 +358,14 @@ const Portfolio=()=>{
       >
         {project.tech}
       </motion.span>
+      {(project.link) && (
+        <motion.a
+          href={project.link}
+          target="_blank"
+          className="inline-block bg-purple-500/20 text-purple-300 px-4 py-2 mt-3 rounded-full text-sm hover:bg-purple-500/30 transition"
+        >
+          View Project
+      </motion.a>)}
     </motion.div>
   ))}
 </div>

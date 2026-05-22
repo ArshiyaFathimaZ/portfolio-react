@@ -13,12 +13,16 @@
       "Integrated APIs for banking operations",
       "Optimized performance and clean UI experience"
     ],
-    tech: "ReactJS, HTML5, CSS3, Bootstrap, JavaScript, jQuery"
+    tech: "ReactJS, HTML5, CSS3, Bootstrap, JavaScript, jQuery",
+    link:"https://tecumobile.tecutt.com/TECUAMBanking/#/homepage",
+    link2:"https://tecutt.com/"
+  
   },
     {
       title: "AFG & DMS Portal",
       desc: "Developed an enterprise document management platform for banking workflows with document upload, preview, scan, print, and conversion functionalities.",
       tech: "React.js, HTML5, CSS3, Bootstrap, JavaScript",
+      link:"https://afg.ambassadorbanking.com/#/dashboard"
     },
     {
       title: "Banking Chatbot Application",
@@ -26,14 +30,16 @@
       tech: "React.js, Firebase, Node.js, MongoDB",
     },
     {
-      title: "IBorg RPA Automation Tool",
+      title: "IBorg RPA Automation Tool- Desktop Application",
       desc: "Contributed to an automation testing desktop application using Electron for Robotic Process Automation workflows.",
       tech: "AngularJS, Node.js, Electron",
+    
     },
      {
       title: "Sirma Global Internal Website",
       desc: "Developed responsive service pages for the company’s internal website including Database Management Services, Application Development and Maintenance, Managed Services, and Business Process Re-Engineering.",
       tech: "ReactJs,HTML5, CSS3, Bootstrap 4.5, JavaScript",
+      link:"https://www.sirmaglobal.com/"
     },
     {
       title: "Personal Portfolio Website",
@@ -49,8 +55,9 @@
         "Smooth scrolling and hover animations"
       ],
 
-      tech: "ReactJS, Tailwind CSS, Framer Motion, JavaScript"
-    }
+      tech: "ReactJS, Tailwind CSS, Framer Motion, JavaScript",
+      link:"#"
+ }
   ];
 
 
