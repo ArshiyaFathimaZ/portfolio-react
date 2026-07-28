@@ -20,6 +20,7 @@ import {
   SiMongodb,
   SiFirebase,
 } from "react-icons/si";
+import Experience from './Experience';
 
 const Portfolio=()=>{
   const [open, setOpen] = useState(false);
@@ -153,7 +154,7 @@ const Portfolio=()=>{
         </h2>
 
         <p className="max-w-3xl text-lg text-gray-300 leading-8">
-          Frontend Developer with 3.3 years of experience building scalable and
+          Frontend Developer with 4+ years of experience building scalable and
           responsive web applications using React.js, JavaScript, HTML5,
           CSS3, Bootstrap, and Node.js. Experienced in developing reusable UI
           components, mentoring junior developers, and delivering enterprise
@@ -257,8 +258,9 @@ const Portfolio=()=>{
         <h2 className="text-4xl font-bold text-center mb-12">
           Work Experience
         </h2>
+        <Experience/>
 
-        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 shadow-2xl">
+        {/* <div className="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 shadow-2xl">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
             <div>
               <h3 className="text-2xl font-bold text-blue-400">
@@ -301,7 +303,7 @@ const Portfolio=()=>{
               enterprise solutions.
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Career Break */}
         <div className="mt-10 bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 shadow-2xl">

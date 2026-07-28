@@ -59,7 +59,21 @@
       link:"#about"
  }
   ];
+export const experience=[
+  {
+     position:"Senior Frontend Developer",
+    company:"IBeON Infotech Pvt. Ltd.",
+    duration:"Nov 2025 – Present",
+    responsibilities:"Leading frontend development for enterprise web applications, mentoring junior developers, and collaborating with cross-functional teams to deliver high-quality solutions."
+  },
+  {
+    position:"Frontend Developer",
+    company:"Sirma Business Consulting India",
+    duration:"Nov 2020 – Jan 2024",
+    responsibilities:"Developed scalable and responsive enterprise web applications using React.js, AngularJS, JavaScript, HTML5, CSS3, and Bootstrap. Built reusable UI components and optimized frontend performance for maintainable and clean architecture. Mentored and guided a team of 5 junior developers in frontend implementation and coding best practices. Collaborated with backend developers, designers, and QA teams to deliver high-quality customer-focused applications. Worked on banking automation, document management, and RPA-based enterprise solutions."
+  }
 
+]
 
  
 
